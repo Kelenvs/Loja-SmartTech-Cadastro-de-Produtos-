@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-
+  <link rel="stylesheet" href="style.css">
   <title>PRODUTOS</title>
 </head>
 
@@ -13,25 +13,24 @@
     <h1>Cadastro de Produtos</h1></br>
 
     <form id="produtoForm">
-      <label for="nome"><b>Nome</b></label>
+      <label for="nome"><strong>Nome</strong></label>
       <input type="text" id="nome" name="nome" placeholder="Nome do Produto" required></br></br>
 
-      <label for="categoria"><b>Categoria</b></label>
+      <label for="categoria"><strong>Categoria</strong></label>
       <input type="text" id="categoria" name="categoria" placeholder="Categoria do Produto"></br></br>
 
-      <label for="preco"><b>Preço (R$)</b></label>
+      <label for="preco"><strong>Preço (R$)</strong></label>
       <input type="number" id="preco" name="preco" placeholder="Preço (R$)" step="0.01" required></br></br>
 
-      <label for="desconto"><b>Desconto (%)</b></label>
+      <label for="desconto"><strong>Desconto (%)</strong></label>
       <input type="number" id="desconto" name="desconto" placeholder="Desconto (%)" step="0.01" required></br></br>
 
-      <button type="submit"><b>Cadastrar</b></button></br></br>
+      <button type="submit"><strong>Cadastrar</strong></button></br></br>
     </form>
 
-    <span>
-      <h1>Lista de Produtos Cadastrados</h1></br>
-      <ol id="listaProdutos"></ol></br>
-    </span>
+    <h1>Lista de Produtos Cadastrados</h1></br>
+    <ol id="listaProdutos"></ol></br>
+
   </div>
 
   <script>
@@ -81,16 +80,16 @@
 
     function adicionarProdutoNaLista(produto) {
       const li = document.createElement('li');
+      const numero = listaProdutos.children.length + 1;
 
       li.innerHTML = `
-          <strong>${escapeHtml(produto.nome)}</strong>
+      <strong>${numero}. ${escapeHtml(produto.nome)}</strong>
           ${produto.categoria ? `<span class="categoria"> — ${escapeHtml(produto.categoria)}</span>` : ''}
           <div class="precos">
             Preço: R$ ${produto.preco.toFixed(2)} |
             Desconto: ${produto.desconto}% |
             Final: R$ ${produto.calcularPrecoComDesconto().toFixed(2)}
           </div>
-        
       `;
 
       const btnRemover = document.createElement('button');
