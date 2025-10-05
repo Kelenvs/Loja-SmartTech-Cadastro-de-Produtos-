@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <link rel="stylesheet" href="style.css">
+
   <title>PRODUTOS</title>
 </head>
+
 <body>
   <div class="container">
     <h1>Cadastro de Produtos</h1></br>
 
     <form id="produtoForm">
-      <div>
-          <label for="nome"><b>Nome</b></label>
-          <input type="text" id="nome" name="nome" placeholder="Nome do Produto" required></br></br>
-      </div>
+      <label for="nome"><b>Nome</b></label>
+      <input type="text" id="nome" name="nome" placeholder="Nome do Produto" required></br></br>
 
       <label for="categoria"><b>Categoria</b></label>
       <input type="text" id="categoria" name="categoria" placeholder="Categoria do Produto"></br></br>
@@ -29,8 +29,8 @@
     </form>
 
     <span>
-        <h1>Lista de Produtos Cadastrados</h1></br>
-        <ol id="listaProdutos"></ol></br>
+      <h1>Lista de Produtos Cadastrados</h1></br>
+      <ol id="listaProdutos"></ol></br>
     </span>
   </div>
 
@@ -50,7 +50,7 @@
     const form = document.getElementById('produtoForm');
     const listaProdutos = document.getElementById('listaProdutos');
 
-    form.addEventListener('submit', function(event) {
+    form.addEventListener('submit', function (event) {
       event.preventDefault();
 
       const nome = document.getElementById('nome').value.trim();
@@ -83,7 +83,6 @@
       const li = document.createElement('li');
 
       li.innerHTML = `
-        <div class="produto-info">
           <strong>${escapeHtml(produto.nome)}</strong>
           ${produto.categoria ? `<span class="categoria"> — ${escapeHtml(produto.categoria)}</span>` : ''}
           <div class="precos">
@@ -91,19 +90,13 @@
             Desconto: ${produto.desconto}% |
             Final: R$ ${produto.calcularPrecoComDesconto().toFixed(2)}
           </div>
-        </div>
+        
       `;
-
-      const btnConcluir = document.createElement('button');
-      btnConcluir.type = 'button';
-      btnConcluir.textContent = 'Concluir';
-      btnConcluir.className = 'concluir-btn';
-      btnConcluir.addEventListener('click', () => li.classList.toggle('concluido'));
 
       const btnRemover = document.createElement('button');
       btnRemover.type = 'button';
       btnRemover.textContent = 'Remover';
-      btnRemover.className = 'remover-btn';
+      btnRemover.className = 'button';
       btnRemover.addEventListener('click', () => li.remove());
 
       // botões à direita
@@ -126,4 +119,5 @@
     }
   </script>
 </body>
+
 </html>
