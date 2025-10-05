@@ -1,0 +1,106 @@
+body {
+    margin: 0;
+    padding: 0%;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #0D1B2A;
+    color: #FFFFFF;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #00C6D7;
+    margin-bottom: 10px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+div{
+    text-align: center;
+
+}
+
+h2 {
+    font-size: 1.8em;
+    color: #1B9AAA;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+input {
+    padding: 10px;
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid #1B263B;
+    border-radius: 5px;
+    background-color: #1B2638;
+    color: #FFFFFF;
+    margin: 10px 0;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: #00C6D7;
+    outline: none;
+}
+
+table {
+    width: 100%;
+    max-width: 800px;
+    margin: 30px auto;
+    border-collapse: collapse;
+    background-color: #1B2638;
+    color: #FFFFFF;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 198, 215, 0.1);
+}
+
+button {
+    background-color: #00C6D7;
+    color: #0D1B2A;
+    border: none;
+    padding: 8px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 10px rgba(0, 198, 215, 0.3);
+}
+
+button:hover {
+    background-color: #00aabb;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 6px rgba(0, 198, 215, 0.2);
+}
+
+th {
+    background-color: #00C6D7;
+    color: #0D1B2A;
+    font-weight: bold;
+}
+tr:hover {
+    background-color: #243447;
+    cursor: pointer;
+
+}
+
+ol {
+    margin-bottom: 10px;   /* espaçamento entre os produtos */
+    padding: 10px;
+    border-radius: 6px;
+    list-style: decimal;   /* coloca numeração automática */
+
+}
+
+.controls{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+}
